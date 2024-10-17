@@ -1,0 +1,61 @@
+
+/* Basic styling */   
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+#navbar {
+      margin: 0;
+      border: 0;
+      padding: 0;
+      color: aliceblue;
+      list-style-type: none;
+      overflow: hidden;
+      background-color: #333;
+      margin: 0;
+      padding: 0;
+      height: 40px;
+    }
+    
+    .navitem {
+      margin: 0;
+      border: 0;
+      padding: 0;
+      color: aliceblue;
+      list-style-type: none;
+      overflow: hidden;
+      background-color: #333;
+      margin: 0;
+      padding: 0;
+      height: 40px;
+      float: left;
+    }
+    
+    .navright {
+      margin: 0;
+      border: 0;
+      padding: 0;
+      color: aliceblue;
+      list-style-type: none;
+      overflow: hidden;
+      background-color: #333;
+      margin: 0;
+      padding: 0;
+      height: 40px;
+      float: right;
+    }  
+    
+    .navitem a {
+      display: block;
+      text-align: center;
+      padding-top: 10px;
+      padding-left: 20px;
+      text-decoration: none;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white
+    }
+    
+    .navitem a:hover { /* Makes site more responsive by changing underline */
+      text-decoration: underline;
+    } 
