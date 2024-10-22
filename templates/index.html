@@ -2,27 +2,22 @@
 <html>
  
 <head>
-    <title>FlaskTest</title>
     <!--This is how we link to our CSS file in our static folder-->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
 </head>
- 
+
 {% block body %}
 <body>
     <ul id="navbar">
         <li class="navitem"><a href="{{ url_for('index') }}">View TimeTable</a></li>
-        <li class="navitem"><a href="{{ url_for('random_num') }}">Random Number</a></li>
-        <li class="navitem"><a href="{{ url_for('admin') }}">Edit TimeTable</a></li>
-        <li class="navright"><a href="{{ url_for('login') }}">Help</a></li>
+        <li class="navitem"><a href="{{ url_for('edit') }}">Edit TimeTable</a></li>
+        <li class="navright"><a href="{{ url_for('index') }}">Help</a></li>
     </ul>
-        <body> 
-            <h1>Time Table</h1> 
-            <button class="btn" type="button" onclick="window.location.href='{{ url_for('join') }}';">Fill form to get updates</button><br/> 
-            <button class="btn" type="button" onclick="window.location.href='{{ url_for('participants') }}';">Check participant list</button> 
+    <body> 
+        <h1 id="cleanheader">Time Table</h1> 
+            <button class="btn" type="button" onclick="window.location.href='{{ url_for('edit') }}';">Edit TimeTable</button><br/> 
+            <button class="btn" type="button" onclick="window.location.href='{{ url_for('timetable_display') }}';">View TimeTable</button> 
         </body> 
-    <h2 class="homeHeader">Welcome To My Homepage</h2>
-    <h4 class="homeDetails">Flask: Rendering Templates</h4>
- <!-- What appears before block body can be used as a basic template again -->  
 {% endblock %}
  
 </body>

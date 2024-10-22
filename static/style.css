@@ -10,6 +10,7 @@
       border: 0;
       padding: 0;
       color: aliceblue;
+      font-family: "Merriweather-Regular", Helvetica;
       list-style-type: none;
       overflow: hidden;
       background-color: #333;
@@ -59,3 +60,19 @@
     .navitem a:hover { /* Makes site more responsive by changing underline */
       text-decoration: underline;
     } 
+    #cleanheader {
+      display: flex;
+      width: 218px;
+      height: 39px;
+      flex-direction: column;
+      justify-content: center;
+      flex-shrink: 0;
+      color: rgb(0, 0, 0);
+      text-align: center;
+      font-family: "Jacques Francois";
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 60px */
+      letter-spacing: -0.44px;
+    }
