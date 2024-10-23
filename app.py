@@ -20,15 +20,16 @@ def index():
 @app.route('/edit_timetable', methods=['GET', 'POST']) 
 def edit(): 
     if request.method == 'POST': 
-        name = request.form['name'] 
-        email = request.form['email'] 
-        city = request.form['city'] 
-        country = request.form['country'] 
-        phone = request.form['phone'] 
+        DayOne = request.form['d1p1'] 
+        d1p2 = request.form['d1p2'] 
+        d1p3 = request.form['d1p3'] 
+        d1p4 = request.form['d1p3'] 
+        d1p5 = request.form['d1p4'] 
   
         with sqlite3.connect("TimeTable.db") as users: 
             cursor = users.cursor() 
-            cursor.execute("INSERT INTO timetable (name,email,city,country,phone) VALUES (?,?,?,?,?)",(name, email, city, country, phone)) 
+            cursor.execute("INSERT INTO DayOne\
+(Period 1,Period 2,Period 3,Period 4,Period 5,Period 6,Period 7,) VALUES (?,?,?,?,?),(Period 1,Period 2,Period 3,Period 4,Period 5,Period 6,Period 7,"))
             users.commit() 
         return render_template("index.html") 
     else: 
