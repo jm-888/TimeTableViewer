@@ -18,8 +18,30 @@
             <button class="btn" type="button" onclick="window.location.href='{{ url_for('edit') }}';">Edit TimeTable</button><br/> 
             <button class="btn" type="button" onclick="window.location.href='{{ url_for('timetable_display') }}';">View TimeTable</button> 
         </body> 
-{% endblock %}
  
 </body>
- 
-</html>
+<body>
+    <ul id="navbar">
+        <li class="navitem"><a href="{{ url_for('index') }}">View TimeTable</a></li>
+        <li class="navitem"><a href="{{ url_for('edit') }}">Edit TimeTable</a></li>
+        <li class="navright"><a href="{{ url_for('index') }}">Help</a></li>
+    </ul>
+        <body> 
+            <table style="width:100%"> 
+                <tr> 
+                    <th>Day 1</th> 
+                    <th>Day 2</th> 
+                    <th>Day 3</th> 
+                    <th>Day 4</th> 
+                    <th>Day 5</th> 
+                    <th>Day 6</th> 
+                    <th>Day 7</th> 
+                </tr> 
+                {%for timetable in data%} 
+                
+                {%endfor%} 
+            </table>		 
+        </body> 
+        {% endblock %}
+</html> 
+
