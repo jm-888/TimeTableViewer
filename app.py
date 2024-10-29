@@ -26,6 +26,36 @@ def get_db_connection():
 
     
 
+
+
+
+@app.route('/add_timetable', methods=('POST', 'GET'))
+def add_timetable():
+    conn = get_db_connection()
+    book = conn.execute('SELECT * FROM library').fetchone()
+
+    if request.method == 'POST':
+        title = request.form['intitle']
+        authour = request.form['inauthour']
+        genre = request.form['ingenre']
+        category = request.form['incategory']
+        dp = request.form['indop']
+        rating = request.form['inrating']
+        description = request.form['indescription']
+#        image = request.form['img']
+
+
+        if not title or not authour or not genre or not category or not dp or not rating or not description:
+            flash('All fields are required!')
+        else:
+            conn.execute('INSERT INTO library (title, authour, genre, category, published, rating, description) VALUES ( ?, ?, ?, ?, ?, ?, ?)', 
+                         ( title, authour, genre, category, dp, rating, description))
+            conn.commit()
+            conn.close()
+            return render_template('newbook.html')
+            
+    return render_template('newbook.html')
+
 @app.route('/edit_timetable', methods=('POST', 'GET'))
 def login():
     if request.method == 'POST':
