@@ -22,6 +22,8 @@ def get_db_connection():
     conn = sqlite3.connect('login.db')
     conn.row_factory = sqlite3.Row
     return conn
+
+
     
 
 @app.route('/edit_timetable', methods=('POST', 'GET'))
@@ -60,7 +62,7 @@ def edit_timetable(id):
                 (user_name, password, id))
             conn.commit()
             conn.close()
-            return redirect(url_for('admin'))
+            return redirect(url_for('edit_timetable'))
             
     return render_template('edit_timetable.html', day1=day1)
 
