@@ -19,73 +19,47 @@ def index():
 
 
 def get_db_connection():
-    conn = sqlite3.connect('login.db')
+    conn = sqlite3.connect('TimeTable.db')
     conn.row_factory = sqlite3.Row
     return conn
 
-
-    
-
-
+def init_db
 
 
 @app.route('/add_timetable', methods=('POST', 'GET'))
 def add_timetable():
     conn = get_db_connection()
-    book = conn.execute('SELECT * FROM library').fetchone()
+    book = conn.execute('SELECT * FROM day').fetchone()
 
     if request.method == 'POST':
-        title = request.form['intitle']
-        authour = request.form['inauthour']
-        genre = request.form['ingenre']
-        category = request.form['incategory']
-        dp = request.form['indop']
-        rating = request.form['inrating']
-        description = request.form['indescription']
-#        image = request.form['img']
+        task = request.form['intitle']
+        time = request.form['inauthour']
+        location = request.form['ingenre']
+        description = request.form['incategory']
 
-
-        if not title or not authour or not genre or not category or not dp or not rating or not description:
+        if not task or not time or not location or not description:
             flash('All fields are required!')
         else:
-            conn.execute('INSERT INTO library (title, authour, genre, category, published, rating, description) VALUES ( ?, ?, ?, ?, ?, ?, ?)', 
-                         ( title, authour, genre, category, dp, rating, description))
+            conn.execute('INSERT INTO day (task, time, location, description) VALUES ( ?, ?, ?, ?)', 
+                         ( task, time, location, description))
             conn.commit()
             conn.close()
-            return render_template('newbook.html')
+            return render_template('add_timetable.html')
             
-    return render_template('newbook.html')
+    return render_template('add_timetable.html')
 
 @app.route('/edit_timetable', methods=('POST', 'GET'))
-def login():
-    if request.method == 'POST':
-        user_name = request.form['userName']
-        password = request.form['password']
-
-        if not user_name or not password: 
-            flash('All Fields required')
-        else:
-            conn = get_db_connection()
-            conn.execute('INSERT INTO users (username, password) VALUES (?,?)', (user_name, password))
-            conn.commit()
-            conn.close()
-            return redirect(url_for('index'))
-    return render_template("index.html")
-
 def edit_timetable(id):
     conn = get_db_connection()
     day1 = conn.execute('SELECT * FROM DayOne WHERE id=?', (id,)).fetchone()
 
     if request.method == 'POST':
-        d1p1 = request.form['']
-        d1p2 = request.form['']
-        d1p3 = request.form['']
-        d1p4 = request.form['']
-        d1p5 = request.form['']
-        d1p6 = request.form['']
-        d1p7 = request.form['']
+        task = request.form['']
+        time = request.form['']
+        location = request.form['']
+        description = request.form['']
 
-        if not user_name or not password: 
+        if not d1p1 or not password: 
             flash('All fields are required!')
         else:
             conn.execute('UPDATE users SET username = ?, password = ? WHERE id = ?', 
@@ -94,7 +68,7 @@ def edit_timetable(id):
             conn.close()
             return redirect(url_for('edit_timetable'))
             
-    return render_template('edit_timetable.html', day1=day1)
+    return render_template('edit_timetable.html')
 
     
 
