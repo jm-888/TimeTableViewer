@@ -115,7 +115,7 @@ def delete_timetable(id):
     conn.commit()
     conn.close()
     flash('Task deleted successfully!')
-    return redirect(url_for('view_timetable'))
+    return redirect(url_for('index'))
 
 
 # main driver function #MAKE SURE THIS STAYS AT THE BOTTOM AT ALL TIMES
