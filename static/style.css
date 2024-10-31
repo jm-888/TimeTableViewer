@@ -6,73 +6,225 @@
   padding: 0;
 }
 #navbar {
-      margin: 0;
-      border: 0;
-      padding: 0;
-      color: aliceblue;
-      font-family: "Merriweather-Regular", Helvetica;
-      list-style-type: none;
-      overflow: hidden;
-      background-color: #333;
-      margin: 0;
-      padding: 0;
-      height: 40px;
-    }
-    
-    .navitem {
-      margin: 0;
-      border: 0;
-      padding: 0;
-      color: aliceblue;
-      list-style-type: none;
-      overflow: hidden;
-      background-color: #333;
-      margin: 0;
-      padding: 0;
-      height: 40px;
-      float: left;
-    }
-    
-    .navright {
-      margin: 0;
-      border: 0;
-      padding: 0;
-      color: aliceblue;
-      list-style-type: none;
-      overflow: hidden;
-      background-color: #333;
-      margin: 0;
-      padding: 0;
-      height: 40px;
-      float: right;
-    }  
-    
-    .navitem a {
-      display: block;
+  margin: 0 auto; /* center the navbar */
+  border: 0;
+  padding: 0;
+  color: aliceblue;
+  font-family: "Merriweather-Regular", Helvetica, sans-serif; /* added sans-serif as fallback */
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #333;
+  height: 60px; /* increased height for more space */
+  justify-content: center; /* center the items */
+}
+
+.navitem {
+  float: left;
+  height: 60px; /* Ensure all items align properly */
+  display: flex;
+  align-items: center; /* Center items vertically */
+}
+
+.navitem a {
+  display: block;
+  text-align: center;
+  padding: 15px 20px; /* increased padding for better spacing */
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  font-size: 18px; /* increased font size for better visibility */
+}
+
+.navitem a:hover {
+  background-color: #444; /* background change on hover for visibility */
+  text-decoration: underline;
+  text-align: center;
+}
+
+/* Optional: Add some padding to the right for the last item if you have space */
+.navright {
+  margin-right: 20px; /* add space to the right if needed */
+}
+
+.logo {
+  margin-top: 5px ;
+  height: 50px; /* Adjust logo height */
+  margin-right: 1050px; /* Space between logo and nav items */
+  float: left;
+}
+
+    .cleanheader {
+      margin: 0 auto; 
+      margin-top: 40px;
+      display: block; 
+      width: fit-content;
+      color: #333; /* dark text color for contrast */
       text-align: center;
-      padding-top: 10px;
-      padding-left: 20px;
-      text-decoration: none;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: white
-    }
-    
-    .navitem a:hover { /* Makes site more responsive by changing underline */
-      text-decoration: underline;
-    } 
-    #cleanheader {
-      display: flex;
-      width: 218px;
-      height: 39px;
-      flex-direction: column;
-      justify-content: center;
-      flex-shrink: 0;
-      color: rgb(0, 0, 0);
-      text-align: center;
-      font-family: "Jacques Francois";
-      font-size: 40px;
-      font-style: normal;
+      font-family: "Jacques Francois", serif;
+      font-size: 80px;
       font-weight: 400;
-      line-height: 150%; /* 60px */
-      letter-spacing: -0.44px;
+      line-height: 1.2;
+      justify-content: center;
+      letter-spacing: -0.5px;
+      background-color: #f1f1f1; /* light background for contrast */
+      border-radius: 10px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* subtle shadow */
+  }
+  
+
+/* Base styles for input fields */
+input[type="text"] {
+    width: 370px; /* Default width */
+    background-color: lightblue; /* Background color */
+    border-radius: 15px; /* Rounded corners */
+    height: 35px; /* Increased height for better usability */
+    padding: 0 15px; /* Padding for text */
+    border: 2px solid transparent; /* Initial border */
+    transition: background-color 0.3s ease, border 0.3s ease; /* Smooth transition */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font */
+}
+
+/* Specific input field styles */
+#task {
+    width: 370px; /* Specific width */
+}
+
+#time {
+    width: 360px; /* Specific width */
+}
+
+#location {
+    width: 310px; /* Specific width */
+}
+
+#description {
+    width: 270px; /* Specific width */
+}
+
+/* Hover effect */
+input[type="text"]:hover {
+    background-color: #82b7cc; /* Darker shade on hover */
+}
+
+/* Focus effect */
+input[type="text"]:focus {
+    background-color: #b0e0f7; /* Lighter shade on focus */
+    border: 2px solid #007bff; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle shadow for emphasis */
+}
+
+
+    .form {
+      justify-content: center;
+      font-size: xx-large;
+      padding-left: 950px;
+      position: relative;
+      margin: 0 auto;
+      display: block;
+      padding-top: 400px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      block-size: 100px;
     }
+
+
+    #taskheader {
+      margin-left: 130px;
+      display: block; 
+      width: fit-content;
+      color: #333; /* dark text color for contrast */
+      font-family: "Jacques Francois", serif;
+      font-size: 80px;
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+
+  
+  
+
+    #viewtask {
+      font-size: 18px;
+      margin: 0 auto; /* centers the table horizontally */
+      margin-top: 50px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border-collapse: collapse; /* removes the space between borders */
+      width: 80%;
+      max-width: 700px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow for depth */
+      border-radius: 8px;
+  }
+  
+  #viewtask th,
+  #viewtask td {
+      padding: 12px;
+      text-align: center;
+      border: 1px solid #ddd;
+  }
+  
+  #viewtask th {
+      background-color: #707070; /* header background color */
+      color: white;
+      font-weight: bold;
+  }
+  
+  #viewtask tr:nth-child(even) {
+      background-color: #f2f2f2; /* zebra stripes for rows */
+  }
+  
+  #viewtask tr:hover {
+      background-color: #e0f7fa; /* highlight row on hover */
+      
+  }
+  .pbutton {
+    margin: 15px;
+    width: 450px; /* Button width */
+    font-family: "Jacques Francois", serif; /* Font family */
+    background-color: #f0f0f0; /* Light gray background */
+    color: rgb(43, 43, 43); /* Text color */
+    font-size: 40px; /* Font size */
+    border: 2px solid rgb(235, 235, 235); /* Light gray border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px; /* Increased padding for better click area */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Button Hover Effect */
+.pbutton:hover {
+    background-color: #e0e0e0; /* Darker background on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    border-color: #ccc; /* Darker border on hover */
+}
+
+/* Button Active Effect */
+.pbutton:active {
+    transform: translateY(0); /* Reset on click */
+}
+
+  .psbutton {
+    background-color: #ff4d4d; /* Red for delete button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.psbutton:hover {
+    background-color: #e60000; /* Darker red on hover */
+}
+
+.edit {
+    color: #007BFF; /* Blue for edit link */
+    margin-right: 10px; /* Space between edit and delete */
+    text-decoration: none; /* No underline */
+}
+
+.edit:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
  
@@ -6,26 +7,38 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
 </head>
 
-{% block body %}
 <body>
     <ul id="navbar">
-        <li class="navitem"><a href="{{ url_for('index') }}">View TimeTable</a></li>
-        <li class="navitem"><a href="{{ url_for('edit_timetable') }}">Edit TimeTable</a></li>
-        <li class="navitem"><a href="{{ url_for('add_timetable') }}">Add to Timetable</a></li>
+        <li class="navitem"><img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo"></li>
+        <li class="navitem"><a href="{{ url_for('index') }}">View</a></li>
+        <li class="navitem"><a href="{{ url_for('add_timetable') }}">Add</a></li>
+        <li class="navitem"><a href="{{ url_for('view_timetable') }}">Edit</a></li>
     </ul>
-    <body>  
-            <table style="width:100%"> 
-                <tr> 
-                    <th>Task</th> 
-                    <th>Time</th> 
-                    <th>Location</th> 
-                    <th>Description</th> 
-                </tr> 
-                {%for timetable in data%} 
-                
-                {%endfor%} 
-            </table>		 
-        </body> 
-        {% endblock %}
-</html> 
-
+    {% block body %}
+    <div class="form-container"> <!-- Container for styling -->
+        <h2 class="cleanheader">Task List</h2> <!-- Updated title for clarity -->
+        
+        <table id="viewtask">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Time</th>
+                    <th>Location</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for day in day %}
+                <tr>
+                    <td>{{ day.task }}</td>
+                    <td>{{ day.time }}</td>
+                    <td>{{ day.location }}</td>
+                    <td>{{ day.description }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endblock %}
+</body>
+</html>

@@ -6,23 +6,28 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
 </head>
 
-{% block body %}
 <body>
     <ul id="navbar">
-        <li class="navitem"><a href="{{ url_for('index') }}">View TimeTable</a></li>
-        <li class="navitem"><a href="{{ url_for('edit_timetable') }}">Edit TimeTable</a></li>
+        <li class="navitem"><img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo"></li>
+        <li class="navitem"><a href="{{ url_for('index') }}">View</a></li>
+        <li class="navitem"><a href="{{ url_for('add_timetable') }}">Add</a></li>
+        <li class="navitem"><a href="{{ url_for('view_timetable') }}">Edit</a></li>
+        
     </ul>
-<body class="edit">
+{% block body %}
+
 {% block content %}
-<h2>All Games</h2>
-<table>
+<body>
+<h2 class="cleanheader">Edit Tasks</h2>
+<table id="viewtask">
     <thead>
         <tr>
             <th>ID</th>
-            <th>task</th>
-            <th>time</th>
-            <th>location</th>
-            <th>description</th>
+            <th>Task</th>
+            <th>Time</th>
+            <th>Location</th>
+            <th>Description</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -34,15 +39,15 @@
             <td>{{ day.location }}</td>
             <td>{{ day.description }}</td>
             <td>
-                <a href="{{ url_for('edit_timetable', id=day.id) }}">Edit</a>
-                <form action="{{ url_for('delete_user', id=user.id) }}" method="post" style="display:inline;">
-                    <button type="submit">Delete</button>
-                </form>
+            <a class="edit" href="{{ url_for('edit_timetable', id=day.id) }}">Edit</a>
+            <form action="{{ url_for('delete_timetable', id=day.id) }}" method="post" style="display:inline;">
+                    <button class="psbutton" type="submit">Delete</button>
             </td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
+{% endblock %}
 {% endblock %}
 </body>
 </html>
