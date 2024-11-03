@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html>
- 
-<head>
-    <!--This is how we link to our CSS file in our static folder-->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-<body>
-    <ul id="navbar">
-        <li class="navitem"><img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo"></li>
-        <li class="navitem"><a href="{{ url_for('index') }}">View</a></li>
-        <li class="navitem"><a href="{{ url_for('add_timetable') }}">Add</a></li>      
-        <li class="navitem"><a href="{{ url_for('view_timetable') }}">Edit</a></li>      
-    </ul>
+{% extends 'index.html' %} 
     {% block body %}
     <div class="form">
         <form method="POST"> 

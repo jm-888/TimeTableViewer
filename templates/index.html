@@ -14,6 +14,11 @@
         <li class="navitem"><a href="{{ url_for('index') }}">View</a></li>
         <li class="navitem"><a href="{{ url_for('add_timetable') }}">Add</a></li>
         <li class="navitem"><a href="{{ url_for('view_timetable') }}">Edit</a></li>
+        <form class="search_button" action="action_page.php">
+            <input type="text" placeholder="Search..(this is just for aesthetics btw doesn't work)" name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>          
+          
 
     </ul>
     {% block body %}

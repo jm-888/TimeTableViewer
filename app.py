@@ -114,7 +114,6 @@ def delete_timetable(id):
     conn.execute('DELETE FROM day WHERE id = ?', (id,))
     conn.commit()
     conn.close()
-    flash('Task deleted successfully!')
     return redirect(url_for('index'))
 
 
